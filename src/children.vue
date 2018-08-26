@@ -1,29 +1,26 @@
 <template>
   <div>
-    <h2>我是children 组件</h2>
-    <div>
-      <div>动态数据：<p>{{activeName1}}</p></div>
-      <hr>
-      <div>常量数据：<p>{{activeName2}}</p></div>
-    </div>
+    <h2>组件B</h2>
+    <h3>{{msg}}</h3>
   </div>
 </template>
 
 <script>
-export default {
-  props: {
-    activeName1: {
-      type: String
+  import connect from './eventbus'
+  export default {
+    data() {
+      return {
+        msg:""
+      }
     },
-    activeName2: {
-      type: String
+    created() {
+      connect.$on('activeName', item => {
+        this.msg = item
+      })
     }
-  },
-  data() {
-    return {};
   }
-};
 </script>
 
 <style scoped>
+
 </style>

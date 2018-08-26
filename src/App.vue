@@ -1,24 +1,44 @@
 <template>
   <div id="app">
-    <h1>我是App的组件</h1>
-    <children :active-name1="msg" active-name2="我字面量的App内容"></children>
+    <h1>组件A</h1>
+    <div class="btn" @click="onButton">
+      组件A
+    </div>
+    <children></children>
   </div>
 </template>
 
 <script>
+  import connect from './eventbus'
   import children from './children'
+
   export default {
     data() {
       return {
-        msg: '我是App的组件msg值'
+        message: '组件A红包（data）要给组件B了'
       }
     },
     components: {
       children
     },
+    methods: {
+      onButton() {
+        connect.$emit("activeName", this.message)
+      }
+    }
   }
 </script>
 
-<style>
-
+<style scoped>
+  .btn {
+    width: 128px;
+    height: 46px;
+    border-radius: 4px;
+    background-color: #64c255;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
