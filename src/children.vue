@@ -4,23 +4,21 @@
     <h3>{{msg}}</h3>
   </div>
 </template>
-
 <script>
-  import connect from './eventbus'
-  export default {
-    data() {
-      return {
-        msg:""
-      }
-    },
-    created() {
-      connect.$on('activeName', item => {
-        this.msg = item
-      })
+export default {
+  data() {
+    return {
+      msg: ""
     }
+  },
+  created() {
+    console.log(sessionStorage.getItem('activeName'))
+    this.msg = sessionStorage.getItem('activeName')
   }
-</script>
+}
 
+</script>
 <style scoped>
+
 
 </style>
