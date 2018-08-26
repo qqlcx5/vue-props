@@ -1,39 +1,29 @@
 <template>
   <div>
     <h2>我是children 组件</h2>
-    <hr>
-    <div class="btn" @click="onButton">
-      子组件
+    <div>
+      <div>动态数据：<p>{{activeName1}}</p></div>
+      <hr>
+      <div>常量数据：<p>{{activeName2}}</p></div>
     </div>
   </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        msg:"我是子组件的数据"
-      }
+export default {
+  props: {
+    activeName1: {
+      type: String
     },
-    methods:{
-      onButton(){
-        this.$emit("activeName",this.msg)
-      }
-    },
-
+    activeName2: {
+      type: String
+    }
+  },
+  data() {
+    return {};
   }
+};
 </script>
 
 <style scoped>
-.btn{
-  width: 128px;
-  height: 46px;
-  border-radius: 4px;
-  background-color: #64c255;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
 </style>
