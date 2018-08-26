@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>children</h2>
+    <h2>其他组件也会随着一起改</h2>
     <span><strong>Vuex的city：</strong>{{this.$store.state.city}}</span>
   </div>
 </template>
