@@ -1,7 +1,9 @@
 # 序言：
 ## 更新[源代码](https://github.com/qqlcx5/vue-props)
 6种方法对应6个分支，不懂的切换分支，可以直接在src替换vue-props文件夹里面文件
+
 下载文件记得先安装依赖，npm install
+
 然后在启动 npm run dev
 
 
